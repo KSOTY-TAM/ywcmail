@@ -1,0 +1,52 @@
+Welcome
+-------
+This is YWCMAIL 0.96. This is an essential upgrade to the 0.95 version. Please see the details of the changes in the file 000-Readme.txt. The main upgrade is a simple access list and handling of more complex MIME messages.
+
+What YWCMAIL is?
+----------------
+First, thanks for your support to ywcmail. Actually, ywcmail is a simple and
+fast webmail CGI client written on pure C, even more, it is a SECURE
+SOLUTION for pop3 protocol. Hackers can easily broke into port 110 and
+get your e-mail, and this means that you have no PIRACY. OK, you may ask why 
+don't you use SSL+POP3? I can tell you the settings are complex enough to 
+take you more than 3 hours. 
+
+If you use ywcmail, you can get a SECURE POP3 and a SECURE webmail faster.
+
+Ywcmail gets your e-mail though port 110 on the localhost, handle it and
+finally report to the users though web interface (Port80). This means you
+can close port110 of your firewall. And at the same time, you can get a webmail.
+Don't forget, the whole procedure need to compile ywcmail and make it runs 
+need only 10 MINUTES. 
+
+HOWEVER, you should put ywcmail under Apache+SSL (port443) to protect your
+data. This is RECOMMENDED 
+
+Installation 
+------------
+You need the followings:
+
+- Apache 
+- GCC compiler (or standard C compiler)
+
+
+Steps are as follows:
+
+1. Open the file 'config.h' with a text editor and make changes to it.
+   Some of the available options are; default host names, language, colors,
+   frames/no frames and return address host name.  Odds are, you won't have to
+   change any of these for  ywcmail to work, however, some changes (like
+   changing the default host names) may make ywcmail easier to use. If you want 
+   to change the layout of the HTML code, edit main.c
+
+2. Type 'make'.  This will make the file 'webmail.cgi'.  
+
+3. Copy this file to a CGI enabled directory in your web server.  Additionally, 
+   you will probably want to copy the 'webmail' subdirectory to the root of 
+   your web server's htdocs directory.
+
+4. DONE. This takes you <10 mintues to reach here. Enjoy it ! :D  
+
+-----------
+Chan Yin Chi  < 0330@bigfoot.com >
+http://ywcmail.sunsite.dk

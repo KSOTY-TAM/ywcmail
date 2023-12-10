@@ -1,0 +1,30 @@
+A        { color: #6884b8; text-decoration : none }
+A:HOVER  { text-decoration : underline }
+
+body     {scrollbar-3d-light-color:#FFFFFF;
+          scrollbar-arrow-color:DDC0B0;
+	  scrollbar-base-color:#6884b8;
+	  scrollbar-dark-shadow-color:#FFFFFF;
+	  scrollbar-face-color:#F5FAFF;
+	  scrollbar-highlight-color:#F3F9FF;
+	  scrollbar-shadow-color:#6884b8}
+
+.JUSTIFY { text-align: justify }
+
+.TBAR    { color: #505050; font-size: 8pt; font-family: Geneva, Arial, Verdana; text-decoration: none; }
+
+TH       { color: #000000; background-color: #000050}
+
+input.login { border-width : 2px; 
+	      border-style : solid;
+	      border-color : #DDDDDD;
+	      font-family: "Lucida Sans","Lucida Grade",Aria;
+	      font-size : 12px;
+	     }
+
+INPUT.login { border-width : 2px; 
+	      border-style : solid;
+	      border-color : #DDDDDD;
+	      font-family: "Lucida Sans","Lucida Grade",Aria;
+	      font-size : 12px;
+	     }

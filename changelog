@@ -1,0 +1,38 @@
+New in 0.95 (released on 20/01/03)
+-----------
+- fixed some small bugs 
+- updated translation (traditional chinese)
+- some new CSS effects
+
+New in 0.94
+-----------
+- new style sheet 
+- new interface
+- new Icons
+
+New in 0.93  (seems that 1.0 is closer now :))
+-----------
+- new translation (simplified chinese)
+- code cleanup
+- cleanup the HTML code in display
+
+New in 0.92
+-----------
+- fixed error code in logout
+- fixed MIME bug
+
+
+New in 0.91
+-----------
+- new translation (traditional chinese)
+- Imporve MIME 
+
+New in 0.9
+----------
+- minor bugfix
+  - after entering wrong password, the images can't be display correctly. 
+     - (Thanks to Percy Cheung for discovering the bug.)
+
+- text colour changed  
+
+
