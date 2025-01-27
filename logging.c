@@ -15,6 +15,25 @@
   #include <syslog.h>
 #endif
 
+char* get_date( char* msgdate, unsigned int size_msgdate )
+{
+        struct timeval ttime;
+        struct timezone tzone;
+        char msgdatetz[100];
+
+        //20161012 for compile time message about incompatible pointer type
+        gettimeofday(&ttime, &tzone);
+
+        time_t rawtime;
+        rawtime = time(NULL);
+        struct tm *tmp = localtime(&rawtime);
+        strftime(msgdate, size_msgdate, "%a, %d %b %Y %H:%M:%S", tmp);
+        snprintf(msgdatetz, sizeof(msgdatetz)-1, " %+.4d", -tzone.tz_minuteswest/60*100);
+        strncat(msgdate, msgdatetz, size_msgdate-strlen(msgdate)-1);
+
+        return msgdate;
+}
+
 inline void logdata(const char* type, const char* source_file, const char* method, const char *format, ...)
 {
 	char logbuffer[1024];
@@ -25,16 +44,16 @@ inline void logdata(const char* type, const char* source_file, const char* metho
 	pid_t pid;
 	pid = getpid();
 
-	//char msgdate[100];
+	char msgdate[100];
 
-        snprintf(file, sizeof(file)-1, LOG_FILENAME);
+	snprintf(file, sizeof(file)-1, LOG_FILENAME);
 
 	fp=fopen(file, "a");
 	if (fp!=NULL) {
         	va_start(ap, format);
                 vsnprintf(logbuffer, sizeof(logbuffer)-1, format, ap);
                	va_end(ap);
-                fprintf(fp, "%d: %22.22s, %6.6s, %7.7s, %10.10s, %20.20s: %s\n", pid, "May 2019", "unknown", type, source_file, method, logbuffer);
+                fprintf(fp, "%d: %22.22s, %6.6s, %7.7s, %10.10s, %20.20s: %s\n", pid, (char*)get_date( msgdate, 100 ), "unknown", type, source_file, method, logbuffer);
                 fclose(fp);
 	}
         else
